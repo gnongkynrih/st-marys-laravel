@@ -13,7 +13,6 @@
     <div class="flex  mt-24 justify-evenly">
         <button class="bg-blue-500 text-white p-5 rounded-4xl shadow-xl border-2 border-pink-500 hover:bg-pink-500">CLick here</button>
         <button class="bg-blue-500 text-white p-5 rounded-4xl shadow-xl border-2 border-pink-500 hover:bg-pink-500">CLose</button>
-        <button class="bg-blue-500 text-white p-5 rounded-4xl shadow-xl border-2 border-pink-500 hover:bg-pink-500">CLose</button>
     </div>
     
 </body>

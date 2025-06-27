@@ -1,3 +1,8 @@
+if you are downloading from github. after download run the command
+
+1. npm install
+2. composer install
+
 nodejs --> https://nodejs.org/en/download/
 composer ---> https://getcomposer.org
 php
@@ -39,3 +44,20 @@ npm install tailwindcss @tailwindcss/vite
 npm run dev
 
 https://tailwindcss.com/docs
+
+https://github.com/gnongkynrih/st-marys-laravel
+
+git clone https://github.com/gnongkynrih/st-marys-laravel.git
+
+To create livewire page
+php artisan make:livewire LivewireName
+
+https://wireui.dev/
+how to install
+composer require wireui/wireui
+in resources/css/app.css add the following
+
+@import '../../vendor/wireui/wireui/ts/global.css';
+@source '../../vendor/wireui/wireui';
+
+npm run build
