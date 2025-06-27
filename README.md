@@ -1,7 +1,13 @@
 if you are downloading from github. after download run the command
+https://github.com/gnongkynrih/st-marys-laravel
+
+git clone https://github.com/gnongkynrih/st-marys-laravel.git
 
 1. npm install
 2. composer install
+   if you have already downloaded earlier (cloned)
+   then don't download again but go to the project folder and run this command
+   git pull
 
 nodejs --> https://nodejs.org/en/download/
 composer ---> https://getcomposer.org
@@ -44,10 +50,6 @@ npm install tailwindcss @tailwindcss/vite
 npm run dev
 
 https://tailwindcss.com/docs
-
-https://github.com/gnongkynrih/st-marys-laravel
-
-git clone https://github.com/gnongkynrih/st-marys-laravel.git
 
 To create livewire page
 php artisan make:livewire LivewireName
