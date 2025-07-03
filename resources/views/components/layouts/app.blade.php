@@ -17,6 +17,17 @@
       <li><a href="/todo">ToDo</a></li>
     </ul>
   </nav>
+  @if(session()->has('success'))
+    <x-alert title="{{ session()->get('success') }}" positive />
+  @endif
+  @if(session()->has('error'))
+    <x-alert title="{{ session()->get('error') }}" negative />
+  @endif
+
+
   {{ $slot }}
+    <footer>
+    copyright @2025
+  </footer>
 </body>
 </html>
