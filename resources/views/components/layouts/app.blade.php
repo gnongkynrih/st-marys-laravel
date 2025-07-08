@@ -8,10 +8,10 @@
      @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-100 text-gray-800">
-  <nav class="flex justify-between">
+  <nav class="flex justify-between px-6 bg-gradient-to-r from-purple-200 to-purple-500 py-6 shadow-lg">
     <h1>ST Marys</h1>
-    <ul class="flex space-x-4">
-      <li><a href="/">Home</a></li>
+    <ul class="flex space-x-4 text-white">
+      <li><a href="/" class="hover:text-xl  transition">Home</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/contact-us">Contact</a></li>
       <li><a href="/todo">ToDo</a></li>
