@@ -81,3 +81,8 @@ php artisan make:model ModelName -m
 TO CREATE A MIGRATION FILE
 php artisan make:migration add_column_name_to_table_name --table=table_name
 eg php artisan make:migration add_date_of_completion_to_tasks_table --table=tasks
+
+USING CHARTJS
+chartjs.org
+Installation:
+npm install chart.js

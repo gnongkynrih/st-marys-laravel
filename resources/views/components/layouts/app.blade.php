@@ -12,7 +12,7 @@
     <h1>ST Marys</h1>
     <ul class="flex space-x-4 text-white">
       <li><a href="/" class="hover:text-xl  transition">Home</a></li>
-      <li><a href="/about">About</a></li>
+      <li><a href="/about">Report</a></li>
       <li><a href="/contact-us">Contact</a></li>
       <li><a href="/todo">ToDo</a></li>
     </ul>
