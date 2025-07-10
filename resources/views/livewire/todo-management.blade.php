@@ -69,6 +69,7 @@
                     No tasks yet. Add your first task!
                 </div>
             @endforelse
+            {{ $allTasks->links() }}
         </div>
     </div>
 

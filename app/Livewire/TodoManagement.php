@@ -13,33 +13,28 @@ class TodoManagement extends Component
     public $selectedTaskId;
     public $isEdit = false;
     public $is_completed;
-    public $allTasks = []; //store all the existing tasks
     public $search;
     //this function is executed automitically on page load
     public function mount(){
         $this->is_completed = false;
         $this->filterStatus = ['all','completed','pending'];
         $this->isEdit = false;
-        $this->getTasks();
     }
 
-    public function updatedSelectedStatus(){
-        $this->getTasks();
-    }
+    public function getTasks()
+    {
+        $query = Task::query();
 
-    public function updatedSearch(){
-        $this->allTasks = Task::where('description','like',"%{$this->search}%")->get();
-    }
-    public function getTasks(){
-        //select * from tasks order by id descending
-        if($this->selectedStatus == 'all'){
-            $this->allTasks = Task::orderBy('id','desc')->get();
-        }else{
+        if ($this->selectedStatus !== 'all') {
             $status = $this->selectedStatus == 'completed' ? true : false;
-            $this->allTasks = Task::where('is_completed','=', $status)
-                ->orderBy('id','desc')
-                ->get();
+            $query->where('is_completed', $status);
         }
+
+        if (!empty($this->search)) {
+            $query->where('description', 'like', '%' . $this->search . '%');
+        }
+
+        return $query->orderBy('id', 'desc')->paginate(4);
     }
     public function editTask($id){
         // $task = Task::where("id",'=', $id)->first();
@@ -63,7 +58,6 @@ class TodoManagement extends Component
             $task->save();
             
             $this->isEdit = false;
-            $this->getTasks();
             session()->flash('success', 'Task updated successfully');
             return;
         }        
@@ -96,6 +90,11 @@ class TodoManagement extends Component
     }
     public function render()
     {
-        return view('livewire.todo-management');
+        $allTasks = $this->getTasks();
+        return view('livewire.todo-management',
+            [
+                'allTasks' => $allTasks
+            ]
+        );
     }
 }
