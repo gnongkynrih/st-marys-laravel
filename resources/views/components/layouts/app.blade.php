@@ -15,6 +15,14 @@
       <li><a href="/about">Report</a></li>
       <li><a href="/contact-us">Contact</a></li>
       <li><a href="/todo">ToDo</a></li>
+      @auth
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/register">Change Password</a></li>
+      @endauth
+      @guest
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
+      @endguest
     </ul>
   </nav>
   @if(session()->has('success'))
