@@ -52,6 +52,9 @@ npm install tailwindcss @tailwindcss/vite
 npm install @tailwindcss/forms --save-dev
 npm run dev
 
+In our layout file add this line inside html->head
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+
 https://tailwindcss.com/docs
 
 To create livewire page
@@ -81,8 +84,10 @@ php artisan make:model ModelName -m
 TO CREATE A MIGRATION FILE
 php artisan make:migration add_column_name_to_table_name --table=table_name
 eg php artisan make:migration add_date_of_completion_to_tasks_table --table=tasks
-
+eg. php artisan make:migration add_column_user_id_to_table_tasks --table=tasks
 USING CHARTJS
 chartjs.org
 Installation:
 npm install chart.js
+
+TO CREATE RELATIONSHIP BETWEEN TABLES WE DEFINE THE RELATIONSHIP IN THE MODEL

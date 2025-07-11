@@ -1,5 +1,5 @@
 <div class="max-w-md mx-auto mt-10 bg-white p-8 rounded shadow">
-    <h2 class="text-2xl font-bold mb-6 text-center bg-blue-500 text-white p-2 rounded-sm shadow-2xl">Register</h2>
+    <h2 class="text-2xl font-bold mb-6 text-center bg-blue-500 text-white p-2 rounded-sm shadow-2xl">Welcome</h2>
 
     <form wire:submit.prevent="login">
             <x-input type="email" label="Email" wire:model="email" class="mb-4"/>

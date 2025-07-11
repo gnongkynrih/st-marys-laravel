@@ -35,6 +35,7 @@ class Registration extends Component
 
         $this->reset(['name', 'email', 'password', 'password_confirmation']);
         session()->flash('success', 'Registration successful! You can now log in.');
+        return redirect()->route('login');
     }
 
     public function render()

@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Task;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class TodoManagement extends Component
 {
@@ -23,7 +24,9 @@ class TodoManagement extends Component
 
     public function getTasks()
     {
-        $query = Task::query();
+        $user = Auth::user(); //store the current user in $user
+        // $query = $user->tasks(); //get all tasks of the current user
+        $query = $user->tasks();
 
         if ($this->selectedStatus !== 'all') {
             $status = $this->selectedStatus == 'completed' ? true : false;
@@ -65,7 +68,8 @@ class TodoManagement extends Component
             //save the data
             Task::create([
                 'description' => $this->desc,
-                'is_completed' =>$this->is_completed
+                'is_completed' =>$this->is_completed,
+                'user_id'=>Auth::user()->id //also store the authenticated user id
             ]);
 
             // $task = new Task();
