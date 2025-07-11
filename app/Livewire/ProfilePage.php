@@ -46,10 +46,10 @@ class ProfilePage extends Component
                 'phone' => $this->mobile,
             ]);
         }else{
-            $profile  = new Profile;
-            $profile->phone = $this->mobile;
-            $profile->user_id = $user->id;
-            $profile->save();
+            Profile::create([
+                'user_id' => $user->id,
+                'phone' => $this->mobile,
+            ]);
         }
         // if ($this->image) {
         //     $imagePath = $this->image->store('profile-images', 'public');
