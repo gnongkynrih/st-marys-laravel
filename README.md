@@ -91,3 +91,31 @@ Installation:
 npm install chart.js
 
 TO CREATE RELATIONSHIP BETWEEN TABLES WE DEFINE THE RELATIONSHIP IN THE MODEL
+
+TO LINK THE STORAGE PATH SO THAT IT CAN BE ACCESSIBLE
+php artisan storage:link
+
+TO SEND EMAIL
+//we create a mailable class
+php artisan make:mail SendForgotPasswordEmail
+
+//we create a mail view
+php artisan make:view send-forgot-password-email
+
+//Use mailhog SMTP server for testing
+https://github.com/mailhog/MailHog
+after installing run the mailhog server using the command
+mailhog
+
+//in .env file add the following
+MAIL_MAILER=smtp
+MAIL_HOST=localhost
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+
+//TO CHECK YOUR EMAIL
+http://localhost:8025

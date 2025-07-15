@@ -16,7 +16,7 @@
       <li><a href="/contact-us">Contact</a></li>
       <li><a href="/todo">ToDo</a></li>
       @auth
-        <li class="relative group">
+        <li class="relative group z-50">
             <button class="flex items-center space-x-2 hover:text-xl transition-all">
                 <span>{{ Auth::user()->name }}</span>
                 <x-icon name="chevron-down" class="w-4 h-4" />
@@ -37,15 +37,17 @@
     </ul>
   </nav>
    @if (session()->has('success'))
-        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
-            {{ session('success') }}
-        </div>
-    @endif
-  @if(session()->has('error'))
-    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+    <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 5000)" x-show="show" x-transition
+        class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
+        {{ session('success') }}
+    </div>
+@endif
+@if(session()->has('error'))
+    <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 5000)" x-show="show" x-transition
+        class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
         {{ session('error') }}
     </div>
-  @endif
+@endif
 
 
   {{ $slot }}

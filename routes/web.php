@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Livewire\ProfilePage;
 use App\Livewire\Registration;
 use App\Livewire\ChangePassword;
+use App\Livewire\ForgotPassword;
+use App\Livewire\ResetPassword;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -13,12 +15,14 @@ Route::get('/login',Login::class)->name('login');
 Route::get('/',App\Livewire\HomePage::class)->name('home');
 Route::get('contact-us',App\Livewire\ContactUs::class);
 Route::get('about',App\Livewire\AboutUs::class);
-
+Route::get('forgot-password',ForgotPassword::class)->name('forgot-password');
+Route::get('reset-password',ResetPassword::class)->name('reset-password');
 //only authenticated user should be able to see this page
 Route::middleware('auth')->group(function () {
     Route::get('todo',App\Livewire\TodoManagement::class)->name('add-todo');
     Route::get('change-password',ChangePassword::class)->name('change-password');
     Route::get('profile',ProfilePage::class)->name('profile');
+    
 });
 
 

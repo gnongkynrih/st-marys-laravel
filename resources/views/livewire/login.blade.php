@@ -9,5 +9,8 @@
                 <span wire:loading.remove>Login</span>
             </x-button>
         </div>
+        <div class="mt-5">
+            <a href="/forgot-password" class="text-blue-500 hover:underline">Forgot Password?</a>
+        </div>
     </form>
 </div>

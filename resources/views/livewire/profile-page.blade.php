@@ -26,12 +26,13 @@
             <
             <!-- Image -->
             <div>
-                <label for="image" class="block text-sm font-medium text-gray-700">Profile Image</label>
+                <label for="profileImage" class="block text-sm font-medium text-gray-700">Profile Image</label>
                 <input type="file" 
-                       id="image" 
-                       wire:model="image" 
+                       id="profileImage" 
+                       accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+                       wire:model="profileImage" 
                        class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
-                @error('image')
+                @error('profileImage')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                 @enderror
             </div>

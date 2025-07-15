@@ -13,13 +13,13 @@ class ProfilePage extends Component
 
     public $name;
     public $mobile;
-    public $image;
+    public $profileImage;
     public $profile;
 
     protected $rules = [
         'name' => 'required|string|max:255',
         'mobile' => 'nullable|numeric',
-        'image' => 'nullable|image|max:2048',
+        'profileImage' => 'nullable|image|max:2048',
     ];
 
     public function mount()
@@ -51,13 +51,16 @@ class ProfilePage extends Component
                 'phone' => $this->mobile,
             ]);
         }
-        // if ($this->image) {
-        //     $imagePath = $this->image->store('profile-images', 'public');
-        //     $profile->image = $imagePath;
-        //     $profile->save();
-        // }
+        //check if the form contains any image upload
+        if ($this->profileImage) {
+            //store the image in the public profile-images folder
+            $imagePath = $this->profileImage->store('profile-images', 'public');
+            $profile->image = $imagePath;
+            $profile->save();
+        }
 
         session()->flash('success', 'Profile updated successfully!');
+        return redirect()->route('profile');
     }
 
     public function render()
